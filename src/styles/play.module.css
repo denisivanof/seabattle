@@ -1,0 +1,99 @@
+.battlefield {
+    position: relative;
+    margin-top: 30px;
+}
+
+.battlefieldTable {
+    border-collapse: collapse;
+    border-spacing: 0;
+    background: rgba(42, 42, 199, 0.05);
+}
+
+.battlefieldItem {
+    position: relative;
+    border: 1px solid rgba(6, 25, 247, 0.15);
+    min-width: 30px;
+    min-height: 30px;
+}
+
+.battlefieldItem__hovered:hover {
+    background-color: #c9c9ff;
+}
+
+.battlefieldStatus {
+    text-align: center;
+    padding: 20px;
+}
+
+.marker {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+.ship {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: -2px;
+    border: 2px solid #000000;
+    background: rgba(69, 90, 176, 0.45);
+}
+
+.shipKilled {
+    border-color: red;
+    background-color: rgba(255, 0, 0, 0.45);
+}
+
+.shot {
+    text-align: center;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.shotMissed {
+    color: gray;
+}
+
+.shotMissed::before {
+    content: "⚫";
+}
+
+.shotHitted {
+    z-index: 1;
+    background-image: url("../img/boom.png");
+    background-size: 100% 100%;
+}
+
+.dock {
+    position: relative;
+    border: 1px dashed gray;
+    margin-right: 50px;
+    margin-top: 30px;
+    min-width: 300px;
+    min-height: 300px;
+}
+
+.battlefieldConstructor {
+    display: flex;
+    justify-content: space-between;
+    margin: 50px;
+}
+@media (max-width: 730px) {
+    .battlefieldConstructor{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .dock{
+        margin-bottom: 30px;
+        margin-right: 0;
+    }
+}
